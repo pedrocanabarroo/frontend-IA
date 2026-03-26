@@ -1,0 +1,685 @@
+/* ============================================================
+   Dra. Ana Souza — Psicóloga | style.css
+   Estética: Orgânica refinada — acolhedora, serena, humana
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
+
+/* ── Variáveis ── */
+:root {
+  --branco:       #faf8f4;
+  --creme:        #f2ece1;
+  --creme-escuro: #e4d9c8;
+  --salvia:       #7a9e87;
+  --salvia-escuro:#4d7360;
+  --rose:         #c9897a;
+  --texto:        #2c2520;
+  --texto-suave:  #6b5f56;
+  --borda:        #d8cfc3;
+
+  --fonte-titulo: 'Cormorant Garamond', Georgia, serif;
+  --fonte-corpo:  'Jost', sans-serif;
+
+  --max:          1080px;
+  --raio:         2px;
+  --transicao:    0.35s ease;
+  --sombra:       0 8px 40px rgba(44, 37, 32, 0.08);
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background-color: var(--branco);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  font-weight: 300;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; border-radius: var(--raio); }
+
+a { color: var(--salvia-escuro); text-decoration: none; transition: color var(--transicao); }
+a:hover { color: var(--rose); }
+
+ul, ol { list-style: none; }
+
+address { font-style: normal; }
+
+/* ── HEADER ── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background-color: rgba(250, 248, 244, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--borda);
+  padding: 1.25rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+header > div h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--texto);
+  line-height: 1.2;
+}
+
+header > div p {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-top: 0.15rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 0.1rem;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  padding: 0.45rem 0.85rem;
+  border-radius: 20px;
+  transition: background var(--transicao), color var(--transicao);
+}
+
+nav ul li a:hover {
+  background: var(--salvia);
+  color: #fff;
+}
+
+/* ── SEÇÕES — estrutura geral ── */
+section {
+  padding: 6rem 2.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+}
+
+section + section {
+  border-top: 1px solid var(--borda);
+}
+
+section > h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--texto);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+section > h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 0.85em;
+  background: var(--salvia);
+  border-radius: 3px;
+  margin-right: 0.7rem;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+/* ── SEÇÃO INÍCIO ── */
+#inicio {
+  min-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  border-top: none;
+}
+
+#inicio::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 80% 50%, rgba(122, 158, 135, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 15% 80%, rgba(201, 137, 122, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+#inicio h2 {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  max-width: 700px;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 0.9s ease both;
+}
+
+#inicio h2::before { display: none; }
+
+#inicio > p {
+  font-size: 1.15rem;
+  color: var(--texto-suave);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.9s 0.15s ease both;
+}
+
+#inicio > a {
+  display: inline-block;
+  background: var(--salvia-escuro);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  border-radius: 40px;
+  transition: background var(--transicao), transform var(--transicao);
+  animation: fadeUp 0.9s 0.3s ease both;
+  width: fit-content;
+}
+
+#inicio > a:hover {
+  background: var(--rose);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+/* ── SEÇÃO SOBRE ── */
+#sobre > div {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+#sobre > div > div:first-child {
+  background: var(--creme);
+  border-radius: 4px;
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px dashed var(--borda);
+  overflow: hidden;
+}
+
+#sobre > div > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#sobre > div > div:last-child p {
+  color: var(--texto-suave);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+#sobre > div > div:last-child ul {
+  margin-top: 2rem;
+  border-top: 1px solid var(--borda);
+  padding-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+#sobre > div > div:last-child ul li {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+#sobre > div > div:last-child ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--salvia);
+}
+
+/* ── SEÇÃO TRAJETÓRIA ── */
+#trajetoria {
+  background: var(--creme);
+  max-width: 100%;
+  padding-left: max(2.5rem, calc((100% - var(--max)) / 2 + 2.5rem));
+  padding-right: max(2.5rem, calc((100% - var(--max)) / 2 + 2.5rem));
+}
+
+#trajetoria > p {
+  color: var(--texto-suave);
+  max-width: 540px;
+  margin-bottom: 3.5rem;
+}
+
+#trajetoria ol {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  max-width: var(--max);
+}
+
+#trajetoria ol::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--salvia), transparent);
+}
+
+#trajetoria ol li {
+  padding: 0 0 2.8rem 2.5rem;
+  position: relative;
+}
+
+#trajetoria ol li::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: 0.55rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--salvia-escuro);
+  border: 2px solid var(--creme);
+  box-shadow: 0 0 0 2px var(--salvia);
+}
+
+#trajetoria ol li:last-child::before {
+  background: var(--rose);
+  box-shadow: 0 0 0 2px var(--rose);
+}
+
+#trajetoria ol li h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 0.4rem;
+}
+
+#trajetoria ol li p {
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  max-width: 560px;
+}
+
+/* ── SEÇÃO SERVIÇOS ── */
+#servicos > p {
+  color: var(--texto-suave);
+  margin-bottom: 3rem;
+  max-width: 480px;
+}
+
+#servicos > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+#servicos article {
+  background: var(--branco);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  padding: 2rem 1.75rem;
+  transition: box-shadow var(--transicao), transform var(--transicao);
+  position: relative;
+  overflow: hidden;
+}
+
+#servicos article::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--salvia), var(--rose));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transicao);
+}
+
+#servicos article:hover {
+  box-shadow: var(--sombra);
+  transform: translateY(-3px);
+}
+
+#servicos article:hover::after {
+  transform: scaleX(1);
+}
+
+#servicos article h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--texto);
+  margin-bottom: 0.85rem;
+}
+
+#servicos article > p:first-of-type {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  margin-bottom: 1.25rem;
+  line-height: 1.65;
+}
+
+#servicos article p strong {
+  font-weight: 500;
+  color: var(--texto);
+}
+
+#servicos article p:not(:first-of-type) {
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+  margin-top: 0.3rem;
+}
+
+/* ── SEÇÃO AGENDAMENTO ── */
+#agendamento {
+  background: var(--creme);
+  max-width: 100%;
+  padding-left: max(2.5rem, calc((100% - var(--max)) / 2 + 2.5rem));
+  padding-right: max(2.5rem, calc((100% - var(--max)) / 2 + 2.5rem));
+}
+
+#agendamento > p {
+  color: var(--texto-suave);
+  max-width: 540px;
+  margin-bottom: 3rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 720px;
+}
+
+fieldset {
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  padding: 2rem 2rem 1.5rem;
+  background: var(--branco);
+}
+
+legend {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--salvia-escuro);
+  padding: 0 0.6rem;
+  letter-spacing: 0.02em;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-top: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+/* labels inline dos checkboxes */
+fieldset > div label {
+  display: inline;
+  font-size: 0.9rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--texto);
+  margin: 0;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  background: var(--branco);
+  color: var(--texto);
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  font-weight: 300;
+  transition: border-color var(--transicao), box-shadow var(--transicao);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--salvia);
+  box-shadow: 0 0 0 3px rgba(122, 158, 135, 0.18);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--borda);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b5f56' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+fieldset > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  border: 1px solid var(--borda);
+  border-radius: 3px;
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--branco);
+  cursor: pointer;
+  transition: background var(--transicao), border-color var(--transicao);
+  vertical-align: middle;
+  position: relative;
+  flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--salvia);
+  border-color: var(--salvia);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 6px;
+  height: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-left: none;
+  transform: rotate(40deg);
+}
+
+form > p {
+  font-size: 0.82rem;
+  color: var(--texto-suave);
+  margin-top: -1rem;
+}
+
+button[type="submit"] {
+  align-self: flex-start;
+  background: var(--salvia-escuro);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: var(--fonte-corpo);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  transition: background var(--transicao), transform var(--transicao);
+}
+
+button[type="submit"]:hover {
+  background: var(--rose);
+  transform: translateY(-2px);
+}
+
+/* ── SEÇÃO CONTATO ── */
+#contato > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 3rem;
+  margin-top: 0.5rem;
+}
+
+#contato h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--texto);
+}
+
+#contato address p,
+#contato ul li {
+  font-size: 0.95rem;
+  color: var(--texto-suave);
+  margin-bottom: 0.4rem;
+}
+
+#contato ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#contato ul li a {
+  font-size: 0.95rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transicao), color var(--transicao);
+}
+
+#contato ul li a:hover {
+  border-color: var(--rose);
+  color: var(--rose);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--texto);
+  color: rgba(255,255,255,0.35);
+  text-align: center;
+  padding: 2.5rem 2rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.07em;
+  line-height: 2;
+}
+
+footer p:first-child {
+  color: rgba(255,255,255,0.7);
+  font-family: var(--fonte-titulo);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+/* ── ANIMAÇÕES ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── RESPONSIVO ── */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.25rem;
+  }
+
+  nav ul { gap: 0; }
+
+  section {
+    padding: 4rem 1.25rem;
+  }
+
+  #trajetoria,
+  #agendamento {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  #sobre > div {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #sobre > div > div:first-child {
+    aspect-ratio: 4/3;
+    max-height: 280px;
+  }
+
+  form { max-width: 100%; }
+
+  fieldset { padding: 1.5rem 1.25rem; }
+
+  button[type="submit"] { width: 100%; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  #inicio { min-height: auto; padding-top: 3rem; padding-bottom: 3rem; }
+  #inicio h2 { font-size: 2.2rem; }
+}
